@@ -86,6 +86,30 @@
     <div class="step" id="step15">Great! Regular updates can prevent many problems.</div>
 
     <div class="step" id="step16">You might want to consider a system restore or consult with a professional.</div>
+
+    <!-- Checking for Malware or Virus -->
+    <div class="step" id="step17">Sometimes, unexpected computer behavior can be due to malware or viruses. Have you run a recent antivirus scan?<button class="yes" onclick="proceed('step18')">Yes</button><button class="no" onclick="proceed('step19')">No</button></div>
+
+    <div class="step" id="step18">If you found and removed threats but still have issues, some system files might be corrupted. Have you tried a system file check?<button class="yes" onclick="proceed('step20')">Yes</button><button class="no" onclick="proceed('step21')">No</button></div>
+
+    <div class="step" id="step19">It's crucial to run an antivirus scan to check for potential threats. Update your antivirus and run a full system scan. Does the problem persist?<button class="yes" onclick="proceed('step20')">Yes</button><button class="no" onclick="proceed('step22')">No</button></div>
+
+    <!-- System File Check -->
+    <div class="step" id="step20">Corrupt files might still be present. Consider using tools like 'System File Checker' for Windows to repair corrupted system files. Does the problem persist?<button class="yes" onclick="proceed('step23')">Yes</button><button class="no" onclick="proceed('step24')">No</button></div>
+
+    <div class="step" id="step21">Use 'System File Checker' for Windows to scan and fix corrupted system files. If you're on another OS, look for respective system repair tools. Did it resolve the issue?<button class="yes" onclick="proceed('step22')">Yes</button><button class="no" onclick="proceed('step23')">No</button></div>
+
+<!-- Safe Mode and Clean Boot -->
+    <div class="step" id="step22">Congratulations! It's good to regularly monitor and maintain your system for optimal performance.</div>
+    
+    <div class="step" id="step23">Consider booting your computer in Safe Mode. This will load only essential drivers. If the problem doesn't occur in Safe Mode, it's likely a non-essential driver or software causing the issue. Have you identified the culprit?<button class="yes" onclick="proceed('step25')">Yes</button><button class="no" onclick="proceed('step26')">No</button></div>
+
+<!-- Resolve or Further Troubleshoot -->
+    <div class="step" id="step24">Great! It's always a good practice to keep your system files intact and repair any corrupted files.</div>
+
+    <div class="step" id="step25">Uninstall or disable the problematic driver or software. Make sure to check for updates or alternative solutions online.</div>
+
+    <div class="step" id="step26">For complex issues, you might consider a Clean Boot, where you start with a minimal set of drivers and startup programs. This will help you further isolate the problem. If the issue remains unresolved, consulting with a professional or IT department is recommended.</div>
 </div>
 
 <script>
