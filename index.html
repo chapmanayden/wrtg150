@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Troubleshooting Flowchart</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
         .step {
             display: none;
             margin: 20px;
-            padding: 15px;
+            padding: 30px;
             border: 1px solid #ddd;
             border-radius: 5px;
             background-color: #f9f9f9;
+            font-size: 1.1rem;
         }
+
         .active {
             display: block;
         }
+
         button {
-            padding: 10px 15px;
-            margin: 5px;
+            padding: 12px 18px;
+            margin: 10px;
             border: none;
             border-radius: 3px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover, button:focus {
+            background-color: #0056b3;
+        }
+
+        .yes {
             background-color: #007BFF;
             color: #fff;
-            cursor: pointer;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        .no {
+            background-color: #FF5733;
+            color: #fff;
         }
     </style>
 </head>
