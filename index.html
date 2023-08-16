@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Troubleshooting Flowchart</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="step" id="start">
+        <h2>Computer Troubleshooting Flowchart</h2>
+        <p>Is your computer turning on?</p>
+        <button onclick="nextStep('powerOn')">Yes</button>
+        <button onclick="nextStep('powerOff')">No</button>
+    </div>
+
+    <div class="step" id="powerOn">
+        <p>Is the Operating System loading correctly?</p>
+        <button onclick="nextStep('osOk')">Yes</button>
+        <button onclick="nextStep('osNotOk')">No</button>
+    </div>
+
+    <div class="step" id="powerOff">
+        <p>Is the computer plugged in and the power outlet functional?</p>
+        <button onclick="nextStep('start')">Yes, retry turning on.</button>
+        <button onclick="nextStep('outletIssue')">No</button>
+    </div>
+
+    <div class="step" id="osOk">
+        <p>Do you have problems with specific software or apps?</p>
+        <button onclick="nextStep('softwareIssues')">Yes</button>
+        <button onclick="nextStep('noIssues')">No, everything is fine.</button>
+    </div>
+
+    <div class="step" id="osNotOk">
+        <p>Consider reinstalling the operating system or consult with an IT professional.</p>
+    </div>
+
+    <div class="step" id="outletIssue">
+        <p>Plug the computer into a different outlet or check the power cable.</p>
+    </div>
+
+    <div class="step" id="softwareIssues">
+        <p>Have you tried restarting the software or updating it?</p>
+        <button onclick="nextStep('restartedSoftware')">Yes</button>
+        <button onclick="nextStep('notRestartedSoftware')">No</button>
+    </div>
+
+    <div class="step" id="restartedSoftware">
+        <p>If the problem persists, consider reaching out to the software vendor or checking online forums for solutions.</p>
+    </div>
+
+    <div class="step" id="notRestartedSoftware">
+        <p>Restart the software or check for updates. If the problem persists, consult with an IT professional.</p>
+    </div>
+
+    <div class="step" id="noIssues">
+        <p>Your computer seems to be running smoothly. Keep it up!</p>
+    </div>
+
+    <div class="step" id="ITCheck">
+        <p>Are you an IT professional?</p>
+        <button onclick="nextStep('ITYes')">Yes</button>
+        <button onclick="nextStep('ITNo')">No</button>
+    </div>
+
+    <div class="step" id="ITYes">
+        <!-- Advanced troubleshooting steps for IT professionals -->
+        <p>Follow the company protocol for advanced troubleshooting.</p>
+    </div>
+
+    <div class="step" id="ITNo">
+        <p>If you're still having issues, it's recommended to consult with an IT professional.</p>
+    </div>
+</body>
+</html>
