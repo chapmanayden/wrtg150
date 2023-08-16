@@ -5,73 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Troubleshooting Flowchart</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <script>
+        function showAdvanced() {
+            const advancedSection = document.getElementById("advancedSteps");
+            advancedSection.style.display = "block";
+        }
+    </script>
 </head>
 <body>
-    <div class="step" id="start">
-        <h2>Computer Troubleshooting Flowchart</h2>
-        <p>Is your computer turning on?</p>
-        <button onclick="nextStep('powerOn')">Yes</button>
-        <button onclick="nextStep('powerOff')">No</button>
-    </div>
-
-    <div class="step" id="powerOn">
-        <p>Is the Operating System loading correctly?</p>
-        <button onclick="nextStep('osOk')">Yes</button>
-        <button onclick="nextStep('osNotOk')">No</button>
-    </div>
-
-    <div class="step" id="powerOff">
-        <p>Is the computer plugged in and the power outlet functional?</p>
-        <button onclick="nextStep('start')">Yes, retry turning on.</button>
-        <button onclick="nextStep('outletIssue')">No</button>
-    </div>
-
-    <div class="step" id="osOk">
-        <p>Do you have problems with specific software or apps?</p>
-        <button onclick="nextStep('softwareIssues')">Yes</button>
-        <button onclick="nextStep('noIssues')">No, everything is fine.</button>
-    </div>
-
-    <div class="step" id="osNotOk">
-        <p>Consider reinstalling the operating system or consult with an IT professional.</p>
-    </div>
-
-    <div class="step" id="outletIssue">
-        <p>Plug the computer into a different outlet or check the power cable.</p>
-    </div>
-
-    <div class="step" id="softwareIssues">
-        <p>Have you tried restarting the software or updating it?</p>
-        <button onclick="nextStep('restartedSoftware')">Yes</button>
-        <button onclick="nextStep('notRestartedSoftware')">No</button>
-    </div>
-
-    <div class="step" id="restartedSoftware">
-        <p>If the problem persists, consider reaching out to the software vendor or checking online forums for solutions.</p>
-    </div>
-
-    <div class="step" id="notRestartedSoftware">
-        <p>Restart the software or check for updates. If the problem persists, consult with an IT professional.</p>
-    </div>
-
-    <div class="step" id="noIssues">
-        <p>Your computer seems to be running smoothly. Keep it up!</p>
-    </div>
-
-    <div class="step" id="ITCheck">
-        <p>Are you an IT professional?</p>
-        <button onclick="nextStep('ITYes')">Yes</button>
-        <button onclick="nextStep('ITNo')">No</button>
-    </div>
-
-    <div class="step" id="ITYes">
-        <!-- Advanced troubleshooting steps for IT professionals -->
-        <p>Follow the company protocol for advanced troubleshooting.</p>
-    </div>
-
-    <div class="step" id="ITNo">
-        <p>If you're still having issues, it's recommended to consult with an IT professional.</p>
-    </div>
+    <h1>Computer Troubleshooting Flowchart</h1>
+    
+    <ol>
+        <!-- Basic steps here... -->
+        <li>Is the computer powered on?
+            <ul>
+                <li>If not, check the power cable connection.</li>
+            </ul>
+        </li>
+        <li>Is the monitor on and displaying correctly?
+            <ul>
+                <li>If no, ensure the monitor is connected and turned on. Test with another monitor if available.</li>
+            </ul>
+        </li>
+        <li>Can you hear any unusual noises from the computer?
+            <ul>
+                <li>If yes, it might be a hardware issue.</li>
+            </ul>
+        </li>
+        <li>Have you tried turning it off and on again?
+            <ul>
+                <li>If no, restart the computer.</li>
+            </ul>
+        </li>
+        <li>Are your operating system and software updated?
+            <ul>
+                <li>If no, update them.</li>
+            </ul>
+        </li>
+        <li>Are any external devices connected?
+            <ul>
+                <li>If yes, disconnect them to check if they're causing the issue.</li>
+            </ul>
+        </li>
+        <li>Check available disk space.
+            <ul>
+                <li>If there's less than 15% free, consider freeing up space or upgrading storage.</li>
+            </ul>
+        </li>
+        <li>Run a memory diagnostic.
+            <ul>
+                <li>If issues found, there could be RAM problems.</li>
+            </ul>
+        </li>
+        <li>Is the computer network connected?
+            <ul>
+                <li>If no, check network cables or Wi-Fi connections.</li>
+            </ul>
+        </li>
+        <li>Are you experiencing software-specific issues?
+            <ul>
+                <li>If yes, reinstall the software or check its specific troubleshooting steps.</li>
+            </ul>
+        </li>
+        <li>Are you an IT professional?
+            <ul>
+                <li><button onclick="showAdvanced()">Yes, I am</button></li>
+                <li>No: Please consult an IT professional for further troubleshooting.</li>
+            </ul>
+        </li>
+        
+        <!-- Advanced steps (hidden by default) -->
+        <ol id="advancedSteps" style="display: none;">
+            <li>Check system logs for any critical errors or warnings.</li>
+            <li>Is the BIOS/UEFI firmware updated?
+                <ul>
+                    <li>If no, consider updating it.</li>
+                </ul>
+            </li>
+            <li>Conduct a full system malware and virus scan.</li>
+            <li>Check for driver conflicts in the device manager.</li>
+            <li>Inspect hardware - CPU temperature, GPU, and other components.</li>
+            <li>Consider booting into Safe Mode to isolate software conflicts.</li>
+            <li>Network issues? Run a traceroute or check firewall settings.</li>
+            <li>Check the integrity of system files using tools like "sfc" or "DISM".</li>
+            <li>Utilize specialized diagnostic tools based on observed symptoms.</li>
+        </ol>
+    </ol>
 </body>
 </html>
