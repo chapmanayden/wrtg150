@@ -1,167 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Troubleshooting Flowchart</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
         .step {
             display: none;
             margin: 20px;
-            padding: 30px;
+            padding: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             background-color: #f9f9f9;
-            font-size: 1.1rem;
         }
-
         .active {
             display: block;
         }
-
         button {
-            padding: 12px 18px;
-            margin: 10px;
+            padding: 10px 15px;
+            margin: 5px;
             border: none;
             border-radius: 3px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover, button:focus {
-            background-color: #0056b3;
-        }
-
-        .yes {
             background-color: #007BFF;
             color: #fff;
+            cursor: pointer;
         }
-
-        .no {
-            background-color: #FF5733;
-            color: #fff;
+        button:hover {
+            background-color: #0056b3;
         }
         .attribution {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
-}
-
-.attribution h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.attribution p {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-}
-
-hr {
-    width: 80%;
-    border: 0.5px solid #ccc;
-    margin: 20px auto;
-}
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .back-button {
+            background-color: #f0ad4e;
+            margin-top: 10px;
+        }
+        .back-button:hover {
+            background-color: #ec971f;
+        }
     </style>
 </head>
-<div class="attribution">
-    <h2>Troubleshooting Flowchart</h2>
-    <p>Created by: Ayden Chapman</p>
-    <p>For the assignment: Multi-Modal Creation</p>
-    <p>Course: WRTG-150</p>
-    <p>Instructor: Professor Sam Watson</p>
-    <hr>
-</div>
 <body>
 
-<div class="flowchart">
-    <!-- Basic Troubleshooting Steps -->
-    <div class="step active" id="step1">Is your computer powered on?<button onclick="proceed('step2')">Yes</button><button onclick="proceed('step3')">No</button></div>
-    
-    <div class="step" id="step2">Is there a display on the screen?<button onclick="proceed('step4')">Yes</button><button onclick="proceed('step5')">No</button></div>
-    
-    <div class="step" id="step3">Check the power cables and connections. Press the power button. Is it on now?<button onclick="proceed('step2')">Yes</button><button onclick="proceed('step6')">No</button></div>
-    
-    <div class="step" id="step4">Can you operate it normally?<button onclick="proceed('step7')">Yes</button><button onclick="proceed('step8')">No</button></div>
-    
-    <div class="step" id="step5">Consider contacting IT or check monitor connection. If the monitor works on another computer, it might be a bigger issue. Does the computer turn on now?<button onclick="proceed('step2')">Yes</button><button onclick="proceed('step6')">No</button></div>
-    
-    <div class="step" id="step6">Might be time to visit a professional or contact IT. They should guide you further.</div>
-    
-    <div class="step" id="step7">Great! Your computer seems fine now. If the problem reoccurs, you may want to get it checked.</div>
-    
-    <div class="step" id="step8">Try restarting. Does that solve the problem?<button onclick="proceed('step9')">Yes</button><button onclick="proceed('step10')">No</button></div>
-    
-    <!-- Advanced Troubleshooting Steps -->
-    <div class="step" id="step9">Excellent! Keep a watch if the problem persists. Remember, when in doubt, restart.</div>
-
-    <div class="step" id="step10">Let's move to advanced troubleshooting. Have you installed new software/hardware recently?<button onclick="proceed('step11')">Yes</button><button onclick="proceed('step12')">No</button></div>
-
-    <div class="step" id="step11">Consider uninstalling or detaching and see if the problem persists. Does it?<button onclick="proceed('step13')">Yes</button><button onclick="proceed('step14')">No</button></div>
-
-    <div class="step" id="step12">Update your system or drivers. Has this resolved your issue?<button onclick="proceed('step15')">Yes</button><button onclick="proceed('step16')">No</button></div>
-
-    <div class="step" id="step13">It might not be the recent installation. You should consult IT or a professional.</div>
-
-    <div class="step" id="step14">The recent installation might be the culprit. Make sure to check compatibility next time.</div>
-
-    <div class="step" id="step15">Great! Regular updates can prevent many problems.</div>
-
-    <div class="step" id="step16">You might want to consider a system restore or consult with a professional.</div>
-
-    <!-- Checking for Malware or Virus -->
-    <div class="step" id="step17">Sometimes, unexpected computer behavior can be due to malware or viruses. Have you run a recent antivirus scan?<button class="yes" onclick="proceed('step18')">Yes</button><button class="no" onclick="proceed('step19')">No</button></div>
-
-    <div class="step" id="step18">If you found and removed threats but still have issues, some system files might be corrupted. Have you tried a system file check?<button class="yes" onclick="proceed('step20')">Yes</button><button class="no" onclick="proceed('step21')">No</button></div>
-
-    <div class="step" id="step19">It's crucial to run an antivirus scan to check for potential threats. Update your antivirus and run a full system scan. Does the problem persist?<button class="yes" onclick="proceed('step20')">Yes</button><button class="no" onclick="proceed('step22')">No</button></div>
-
-    <!-- System File Check -->
-    <div class="step" id="step20">Corrupt files might still be present. Consider using tools like 'System File Checker' for Windows to repair corrupted system files. Does the problem persist?<button class="yes" onclick="proceed('step23')">Yes</button><button class="no" onclick="proceed('step24')">No</button></div>
-
-    <div class="step" id="step21">Use 'System File Checker' for Windows to scan and fix corrupted system files. If you're on another OS, look for respective system repair tools. Did it resolve the issue?<button class="yes" onclick="proceed('step22')">Yes</button><button class="no" onclick="proceed('step23')">No</button></div>
-
-<!-- Safe Mode and Clean Boot -->
-    <div class="step" id="step22">Congratulations! It's good to regularly monitor and maintain your system for optimal performance.</div>
-    
-    <div class="step" id="step23">Consider booting your computer in Safe Mode. This will load only essential drivers. If the problem doesn't occur in Safe Mode, it's likely a non-essential driver or software causing the issue. Have you identified the culprit?<button class="yes" onclick="proceed('step25')">Yes</button><button class="no" onclick="proceed('step26')">No</button></div>
-
-<!-- Resolve or Further Troubleshoot -->
-    <div class="step" id="step24">Great! It's always a good practice to keep your system files intact and repair any corrupted files.</div>
-
-    <div class="step" id="step25">Uninstall or disable the problematic driver or software. Make sure to check for updates or alternative solutions online.</div>
-
-    <div class="step" id="step26">For complex issues, you might consider a Clean Boot, where you start with a minimal set of drivers and startup programs. This will help you further isolate the problem. If the issue remains unresolved, consulting with a professional or IT department is recommended.</div>
-    <!-- Checking Internet Connectivity -->
-<div class="step" id="step27">Is your computer having internet connectivity issues?<button class="yes" onclick="proceed('step28')">Yes</button><button class="no" onclick="proceed('step30')">No</button></div>
-
-<div class="step" id="step28">Restart your router and computer. Wait for a few minutes. Is the internet working now?<button class="yes" onclick="proceed('step29')">Yes</button><button class="no" onclick="proceed('step31')">No</button></div>
-
-<div class="step" id="step29">Great! Sometimes, simple restarts can resolve connectivity issues. Make sure to monitor your connection for any further disruptions.</div>
-
-<!-- Checking for Hardware Issues -->
-<div class="step" id="step30">Are you experiencing any noticeable hardware issues, like unusual sounds or heating?<button class="yes" onclick="proceed('step32')">Yes</button><button class="no" onclick="proceed('step34')">No</button></div>
-
-<div class="step" id="step31">Check if other devices can connect to the same network. If they can't, the issue might be with the service provider or the router. If they can, the problem might be with your computer's network settings or adapter.</div>
-
-<div class="step" id="step32">Hardware problems can be critical. Backup all essential data. Consider seeking professional help or checking if your device is still under warranty. Did the professional resolve your issue?<button class="yes" onclick="proceed('step33')">Yes</button><button class="no" onclick="proceed('step35')">No</button></div>
-
-<div class="step" id="step33">That's good news! Remember to keep your hardware clean and use your device in favorable conditions to prolong its lifespan.</div>
-
-<div class="step" id="step34">If your computer isn't displaying any of the mentioned issues, it might be an unidentified software problem or a less common hardware issue. Regular maintenance, updates, and occasional professional check-ups can prevent many problems in the future.</div>
-
-<div class="step" id="step35">If professional assistance didn't solve the issue, consider whether it's economical to repair or replace the hardware. Sometimes, the cost of repairs can exceed the value or performance gain of new hardware.</div>
+<!-- Attribution Details -->
+<div class="attribution">
+    <p>Created by Ayden Chapman</p>
+    <p>Assignment: Multi-Modal Creation for WRTG-150</p>
+    <p>Instructor: Professor Sam Watson</p>
 </div>
 
+<div class="flowchart">
+        <!-- Troubleshooting Steps -->
+        <div class="step active" id="step1">Is your computer powered on?<button onclick="proceed('step2')">Yes</button><button onclick="proceed('step3')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step2">Is there a display on the screen?<button onclick="proceed('step4')">Yes</button><button onclick="proceed('step5')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step3">Check the power cables and connections. Press the power button. Is it on now?<button onclick="proceed('step2')">Yes</button><button onclick="proceed('step6')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step4">Can you operate it normally?<button onclick="proceed('step7')">Yes</button><button onclick="proceed('step8')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step5">Consider contacting IT or check monitor connection. If the monitor works on another computer, it might be a bigger issue. Does the computer turn on now?<button onclick="proceed('step2')">Yes</button><button onclick="proceed('step6')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step6">Might be time to visit a professional or contact IT. They should guide you further.<button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step7">Great! Your computer seems fine now. If the problem reoccurs, you may want to get it checked.<button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step8">Try restarting. Does that solve the problem?<button onclick="proceed('step9')">Yes</button><button onclick="proceed('step10')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step9">Excellent! Keep a watch if the problem persists. Remember, when in doubt, restart.<button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step10">Let's move to advanced troubleshooting. Have you installed new software/hardware recently?<button onclick="proceed('step11')">Yes</button><button onclick="proceed('step12')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step11">Consider uninstalling or detaching and see if the problem persists. Does it?<button onclick="proceed('step13')">Yes</button><button onclick="proceed('step14')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step12">Update your system or drivers. Has this resolved your issue?<button onclick="proceed('step15')">Yes</button><button onclick="proceed('step16')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step13">It might not be the recent installation. You should consult IT or a professional.<button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step14">The recent installation might be the culprit. Make sure to check compatibility next time.<button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step15">Great! Regular updates can prevent many problems.<button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step16">You might want to consider a system restore or consult with a professional.<button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step17">Have you tried running a malware or antivirus scan?<button onclick="proceed('step18')">Yes</button><button onclick="proceed('step19')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step18">Remove any detected threats and restart your computer. Did this resolve the issue?<button onclick="proceed('step20')">Yes</button><button onclick="proceed('step21')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step19">Run a full system scan. This might take some time. Did it find and fix any issues?<button onclick="proceed('step20')">Yes</button><button onclick="proceed('step21')">No</button><button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step20">Excellent! Periodically running security scans can prevent a lot of issues.<button class="back-button" onclick="goBack()">Back</button></div>
+
+        <div class="step" id="step21">If problems persist, you might want to consider backing up important data and performing a clean system installation.<button class="back-button" onclick="goBack()">Back</button></div>
+    </div>
+
 <script>
+    var stepHistory = []; // Array to hold steps user has visited
+
     function proceed(stepId) {
+        // Get the current active step
+        var activeStep = document.querySelector('.step.active');
+
+        // If there's an active step, add its ID to the history
+        if (activeStep) {
+            stepHistory.push(activeStep.id);
+        }
+
         // Hide all steps
         var steps = document.querySelectorAll('.step');
         for (var i = 0; i < steps.length; i++) {
@@ -169,6 +114,20 @@ hr {
         }
         // Show the desired step
         document.getElementById(stepId).classList.add('active');
+    }
+
+    function goBack() {
+        if (stepHistory.length > 0) {
+            // Hide all steps
+            var steps = document.querySelectorAll('.step');
+            for (var i = 0; i < steps.length; i++) {
+                steps[i].classList.remove('active');
+            }
+            
+            // Get the last step from the history and display it
+            var lastStepId = stepHistory.pop();
+            document.getElementById(lastStepId).classList.add('active');
+        }
     }
 </script>
 
