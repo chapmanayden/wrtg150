@@ -3,93 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Troubleshooting Flowchart</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function showAdvanced() {
-            const advancedSection = document.getElementById("advancedSteps");
-            advancedSection.style.display = "block";
+    <title>Troubleshooting Flowchart</title>
+    <style>
+        .step {
+            display: none;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
         }
-    </script>
+        .active {
+            display: block;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 3px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Computer Troubleshooting Flowchart</h1>
+
+<div class="flowchart">
+    <!-- Basic Troubleshooting Steps -->
+    <div class="step active" id="step1">Is your computer powered on?<button onclick="proceed('step2')">Yes</button><button onclick="proceed('step3')">No</button></div>
     
-    <ol>
-        <!-- Basic steps here... -->
-        <li>Is the computer powered on?
-            <ul>
-                <li>If not, check the power cable connection.</li>
-            </ul>
-        </li>
-        <li>Is the monitor on and displaying correctly?
-            <ul>
-                <li>If no, ensure the monitor is connected and turned on. Test with another monitor if available.</li>
-            </ul>
-        </li>
-        <li>Can you hear any unusual noises from the computer?
-            <ul>
-                <li>If yes, it might be a hardware issue.</li>
-            </ul>
-        </li>
-        <li>Have you tried turning it off and on again?
-            <ul>
-                <li>If no, restart the computer.</li>
-            </ul>
-        </li>
-        <li>Are your operating system and software updated?
-            <ul>
-                <li>If no, update them.</li>
-            </ul>
-        </li>
-        <li>Are any external devices connected?
-            <ul>
-                <li>If yes, disconnect them to check if they're causing the issue.</li>
-            </ul>
-        </li>
-        <li>Check available disk space.
-            <ul>
-                <li>If there's less than 15% free, consider freeing up space or upgrading storage.</li>
-            </ul>
-        </li>
-        <li>Run a memory diagnostic.
-            <ul>
-                <li>If issues found, there could be RAM problems.</li>
-            </ul>
-        </li>
-        <li>Is the computer network connected?
-            <ul>
-                <li>If no, check network cables or Wi-Fi connections.</li>
-            </ul>
-        </li>
-        <li>Are you experiencing software-specific issues?
-            <ul>
-                <li>If yes, reinstall the software or check its specific troubleshooting steps.</li>
-            </ul>
-        </li>
-        <li>Are you an IT professional?
-            <ul>
-                <li><button onclick="showAdvanced()">Yes, I am</button></li>
-                <li>No: Please consult an IT professional for further troubleshooting.</li>
-            </ul>
-        </li>
-        
-        <!-- Advanced steps (hidden by default) -->
-        <ol id="advancedSteps" style="display: none;">
-            <li>Check system logs for any critical errors or warnings.</li>
-            <li>Is the BIOS/UEFI firmware updated?
-                <ul>
-                    <li>If no, consider updating it.</li>
-                </ul>
-            </li>
-            <li>Conduct a full system malware and virus scan.</li>
-            <li>Check for driver conflicts in the device manager.</li>
-            <li>Inspect hardware - CPU temperature, GPU, and other components.</li>
-            <li>Consider booting into Safe Mode to isolate software conflicts.</li>
-            <li>Network issues? Run a traceroute or check firewall settings.</li>
-            <li>Check the integrity of system files using tools like "sfc" or "DISM".</li>
-            <li>Utilize specialized diagnostic tools based on observed symptoms.</li>
-        </ol>
-    </ol>
+    <div class="step" id="step2">Is there a display on the screen?<button onclick="proceed('step4')">Yes</button><button onclick="proceed('step5')">No</button></div>
+    
+    <div class="step" id="step3">Check the power cables and connections. Press the power button. Is it on now?<button onclick="proceed('step2')">Yes</button><button onclick="proceed('step6')">No</button></div>
+    
+    <div class="step" id="step4">Can you operate it normally?<button onclick="proceed('step7')">Yes</button><button onclick="proceed('step8')">No</button></div>
+    
+    <div class="step" id="step5">Consider contacting IT or check monitor connection. If the monitor works on another computer, it might be a bigger issue. Does the computer turn on now?<button onclick="proceed('step2')">Yes</button><button onclick="proceed('step6')">No</button></div>
+    
+    <div class="step" id="step6">Might be time to visit a professional or contact IT. They should guide you further.</div>
+    
+    <div class="step" id="step7">Great! Your computer seems fine now. If the problem reoccurs, you may want to get it checked.</div>
+    
+    <div class="step" id="step8">Try restarting. Does that solve the problem?<button onclick="proceed('step9')">Yes</button><button onclick="proceed('step10')">No</button></div>
+    
+    <!-- Advanced Troubleshooting Steps -->
+    <div class="step" id="step9">Excellent! Keep a watch if the problem persists. Remember, when in doubt, restart.</div>
+
+    <div class="step" id="step10">Let's move to advanced troubleshooting. Have you installed new software/hardware recently?<button onclick="proceed('step11')">Yes</button><button onclick="proceed('step12')">No</button></div>
+
+    <div class="step" id="step11">Consider uninstalling or detaching and see if the problem persists. Does it?<button onclick="proceed('step13')">Yes</button><button onclick="proceed('step14')">No</button></div>
+
+    <div class="step" id="step12">Update your system or drivers. Has this resolved your issue?<button onclick="proceed('step15')">Yes</button><button onclick="proceed('step16')">No</button></div>
+
+    <div class="step" id="step13">It might not be the recent installation. You should consult IT or a professional.</div>
+
+    <div class="step" id="step14">The recent installation might be the culprit. Make sure to check compatibility next time.</div>
+
+    <div class="step" id="step15">Great! Regular updates can prevent many problems.</div>
+
+    <div class="step" id="step16">You might want to consider a system restore or consult with a professional.</div>
+</div>
+
+<script>
+    function proceed(stepId) {
+        // Hide all steps
+        var steps = document.querySelectorAll('.step');
+        for (var i = 0; i < steps.length; i++) {
+            steps[i].classList.remove('active');
+        }
+        // Show the desired step
+        document.getElementById(stepId).classList.add('active');
+    }
+</script>
+
 </body>
 </html>
